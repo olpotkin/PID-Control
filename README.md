@@ -1,6 +1,34 @@
 # PID-Control
 
 ---
+## Overview
+
+Aim of the project is to implement and tune PID controller in C++ to maneuver the vehicle around the track.
+
+[Simulator](https://github.com/udacity/self-driving-car-sim/releases) is providing the cross track error (CTE) and the velocity (mph) in order to compute the appropriate steering angle.
+
+Resulting video with simulation record is available on [YouTube](https://www.youtube.com/watch?v=tSrgP2qTNdI).
+
+## Tuning
+
+A **Proportional–Integral–Derivative** controller (PID controller) is a control loop feedback mechanism (controller) commonly used in industrial control systems. [More...](https://en.wikipedia.org/wiki/PID_controller)
+
+**P (Proportionnal coefficient)** - It causes the car to steer proportional (and opposite) to the car's distance from the lane center (CTE).
+
+**I (Integral coefficient)** - Used for compensation of systematic bias.
+
+**D (Differential coefficient)** - Counteracts the P component's tendency to ring and overshoot the center line.
+
+The process of setting the optimal gains for P, I and D to get an ideal response from a control system is called **tuning**.
+
+In this project I used empirical method for tuning of parameters:
+
+- Set I and D to 0.0. Tuning of **P** (**0.3**). Test.
+
+- Tuning of **D** (**3.0**). Test.
+
+- Tuning of **I** (**0.001**). Test. It's not significant difference from 0.0, but with 0.0 car crossed border 2 times.
+
 
 ## Dependencies
 
