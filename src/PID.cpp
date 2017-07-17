@@ -39,7 +39,7 @@ void PID::UpdateError(double cte) {
 double PID::TotalError() {
 
     // Total error of each coefficient multiplied by the respective error
-    double t_error = -Kp * p_error - Kd * d_error - Ki * i_error;
+    double t_error = (-Kp * p_error) - (Kd * d_error) - (Ki * i_error);
 
     return t_error;
 }
